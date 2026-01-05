@@ -1,17 +1,15 @@
-// Express Js
-const express = require('express')
-const port = 4020
-// const ejs = require('ejs')
+const express = require("express");
+const app = express();
 
-const app = express()
+// set view engine
+app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: true }));
 
-app.set("view engine" , "ejs")
-app.use(express.urlencoded({extended:true}))
+// route
+app.get("/", (req, res) => {
+  res.render("index", { name: "Jinal" });
+});
 
-app.get('/' , (req , res) => {
-  res.render("index" , {name:"Red And White"})
-})
-
-app.listen(port , () => {
-  console.log(`server start on port ${port}`);
-})
+app.listen(3000, () => {
+  console.log("Server running on port 3000");
+});

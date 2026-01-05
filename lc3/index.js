@@ -5,7 +5,7 @@ const port = 6040
 const app = express()
 
 app.get('/' , (req , res) => {
-  res.send("Welcone to Expess Frameworks...")
+  res.send("Welcome to Expess Frameworks...");
 })
 
 app.listen(port , () => {
