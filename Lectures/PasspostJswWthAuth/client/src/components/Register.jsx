@@ -3,14 +3,15 @@ import { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-const Login = () => {
+const Register = () => {
 
     const navigate = useNavigate()
 
+    const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-    const handleLogin = async (e) => {
+    const handleRegister = async (e) => {
         e.preventDefault()
 
         try {
@@ -25,7 +26,11 @@ const Login = () => {
     }
 
     return (
-        <form onSubmit={handleLogin} className='w-[600px] mx-auto my-10'>
+        <form onSubmit={handleRegister} className='w-[600px] mx-auto my-10'>
+            <div class="mb-6">
+                <label for="name" value={name} onChange={(e) => setName(e.target.value)} class="block mb-2.5 text-sm font-medium text-heading">Name</label>
+                <input type="name" id="name" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" placeholder="abc" required />
+            </div>
             <div class="mb-6">
                 <label for="email" value={email} onChange={(e) => setEmail(e.target.value)} class="block mb-2.5 text-sm font-medium text-heading">Email address</label>
                 <input type="email" id="email" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" placeholder="john.doe@company.com" required />
@@ -39,4 +44,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Register
