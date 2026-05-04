@@ -1,0 +1,25 @@
+<%- include("header") %>
+<%- include("navbar") %>
+
+<div class="max-w-3xl mx-auto px-6 py-10">
+
+  <div class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-lg">
+
+    <h1 class="text-3xl font-bold mb-4">
+      <%= post.title %>
+    </h1>
+
+    <p class="text-gray-300 mb-6">
+      <%= post.content %>
+    </p>
+
+    <p class="text-sm text-gray-400">
+      By <%= post.author.username %>
+    </p>
+
+  </div>
+
+</div>
+
+</body>
+</html>

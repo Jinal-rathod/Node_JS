@@ -1,0 +1,11 @@
+<%- include("navbar") %>
+
+    <div class="container mt-5">
+        <h2>Login</h2>
+
+        <form action="/login" method="POST">
+            <input type="email" name="email" placeholder="Email" class="form-control mt-2" required>
+            <input type="password" name="password" placeholder="Password" class="form-control mt-2" required>
+            <button class="btn btn-primary mt-3">Login</button>
+        </form>
+    </div>
