@@ -26,7 +26,7 @@ app.use(
 
 app.use("/", require("./routes/authRoutes"));
 app.use("/", require("./routes/postRoutes"));
-
+  
 app.use((req, res, next) => {
   res.locals.user = req.session.userId
     ? { _id: req.session.userId, role: req.session.role }
